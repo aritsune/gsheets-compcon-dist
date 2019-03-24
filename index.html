@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gsheet to Comp/Con proof of concept</title>
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <h1>LANCER Google Sheet to comp/con converter</h1>
+            <p>This tool converts LANCER characters from <a href="https://docs.google.com/spreadsheets/d/1Tz8rbkOq9nyuIJ6bA0636dtLeN68Z5Q0yJF8cjycXxQ/edit#gid=0">the LANCER discord's Google Sheets sheet</a> to <a href="https://beeftime.itch.io/compcon">beeftime's comp/con tool</a>.</p>
+            <h4>Instructions:</h4>
+            <ol>
+                <li>On your Google sheet, go to <i>File > Download as > Microsoft Excel (.xlsx)</i></li>
+                <li>Upload it into this tool</li>
+                <li>Copy the results to clipboard</li>
+                <li>In comp/con, add a new pilot, and select <i>Import from clipboard</i></li>
+            </ol>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file_input" accept=".xlsx">
+                <label class="custom-file-label" for="file_input" id="file_label">Choose file</label>
+              </div>
+              <div class="input-group-append">
+                <button class="btn btn-primary" id="upload_button">Upload</button>
+              </div>
+            </div>
+            <div class="alert alert-danger" role="alert" id="error"></div>
+            <button class="btn btn-secondary btn-block" id="copy_button">Copy to clipboard</button>
+            <pre id="code_block" class="pre-scrollable"><code id="code_output" class="language-json"></code></pre>
+        </div>
+    </div>
+    <script src="/bundle.js"></script>
+</body>
+</html>
